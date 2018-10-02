@@ -27,6 +27,7 @@ function draw() {
     background(236,236,236,275);
     fill(50);
       text( "watch the animation, if you're tired left click/right click or hold down -enter-",-350,windowHeight/4+150);
+
       stroke(50);
   }
   else if (mouseButton == RIGHT) {
@@ -39,6 +40,7 @@ function draw() {
       background(21,39,61,275-frameCount);
     fill(275);
         text( "watch the animation, if you're tired left click/right click or hold down -enter-",-350,windowHeight/4+150);
+      
        stroke(lerpColor(color('#006783'), color('#ed6d7f'), frameCount/500));
   }
 
