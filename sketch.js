@@ -26,20 +26,20 @@ function draw() {
   if (mouseButton == LEFT) {
     background(236,236,236,275);
     fill(50);
-      text( "watch the animation, if you're tired left click/right click",-250,windowHeight/4+150);
+      text( "watch the animation, if you're tired left click/right click or hold down -enter-",-350,windowHeight/4+150);
       stroke(50);
   }
   else if (mouseButton == RIGHT) {
     background(236,236,236,0);
     fill(50);
-      text( "watch the animation, if you're tired left click/right click",-250,windowHeight/4+150);
+      text( "watch the animation, if you're tired left click/right click or hold down -enter-",-350,windowHeight/4+150);
         stroke(50);
   }
   else {
-      background(21,39,61,275-frameCount/2);
+      background(21,39,61,275-frameCount);
     fill(275);
-        text( "watch the animation, if you're tired left click/right click",-250,windowHeight/4+150);
-       stroke(lerpColor(color('#006783'), color('#ed6d7f'), frameCount/800));
+        text( "watch the animation, if you're tired left click/right click or hold down -enter-",-350,windowHeight/4+150);
+       stroke(lerpColor(color('#006783'), color('#ed6d7f'), frameCount/500));
   }
 
       //text( frameCount,-250,-windowHeight/4+100);
@@ -64,6 +64,7 @@ pop();
 if (keyIsPressed == true) {  // If the key is pressed,
   background(21,39,61);
    stroke(275);
+   strokeWeight(3);
    var angle1 = frameCount*15;
      var xpos1 =200*cos(angle1);
      var ypos1 =200*sin(angle1);
@@ -73,16 +74,18 @@ if (keyIsPressed == true) {  // If the key is pressed,
      line(xpos1, ypos1,125*cos(180+frameCount/2), 125*sin(180+frameCount/2));
      line(xpos1, ypos1,125*cos(90+frameCount/2), 125*sin(90+frameCount/2));
      line(xpos1, ypos1,125*cos(270+frameCount/2), 125*sin(270+frameCount/2));
-     rotate(frameCount/2);
+rotate(frameCount/2);
     noFill();
-     strokeweight(2);
+
     beginShape();
     vertex(125,0);
     vertex(0,125);
     vertex(-125,0);
     vertex(0,-125);
-    endShape();
+    endShape(CLOSE);
     rotate(-frameCount/2);
+    strokeWeight(1);
+
   }
   else {
     rotate(frameCount*2);
